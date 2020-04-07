@@ -1,0 +1,43 @@
+{
+    "root": true,
+    "extends": [
+        "plugin:vue/essential",
+        "eslint:recommended",
+        "@vue/typescript",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript"
+    ],
+    "plugins": [
+        "vue",
+        "@typescript-eslint",
+        "jest",
+        "import" 
+     ],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                // [h] must currently be explicitly imported for TSX
+                "varsIgnorePattern": "h"
+            }
+        ],
+        "import/default": "off",
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    "parent",
+                    "sibling",
+                    "index"
+                ],
+                "alphabetize": {
+                    "order": "asc"
+                },
+                "newlines-between": "always"
+            }
+        ]
+    }
+}
